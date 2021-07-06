@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockchain!</title>
+  </head>
+	<style>
+	body {
+ 	 background-image: url('https://images.unsplash.com/photo-1608726025971-d7e9df684498?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTh8fGJvb2tzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+ 	 background-repeat: no-repeat;
+ 	 background-attachment: fixed;  
+ 	 background-size: cover;
+	}
+	</style>
+  <body>
+    <header>
+      <h1 style="color:Cornsilk;">Registro de Livros - Biblioteca PUC</h1>
+    </header>
+      <form action="#" target="_self" method="POST" name="frmImovel" id="frmImovel">
+        <label for="addTitulo"; style="color:Cornsilk;"><strong>Título:<strong></label>
+        <input type="text" name="addTitulo" id="addTitulo" size="30" maxlength="30" required autofocus placeholder="p. ex. Ensaio sobre a Cegueira" />
+        <br />
+        <br />
+        <label for="addAutor"; style="color:Cornsilk;"><strong>Autor(a):<strong></label>
+        <input type="text" name="addAutor" id="addAutor" size="30" maxlength="30" required placeholder="p. ex. José Saramago" />
+        <br />
+        <br />
+        <label for="addEditora"; style="color:Cornsilk;"><strong>Editora:<strong></label>
+        <input type="text" name="addEditora" id="addEditora" size="30" required placeholder="p. ex. Cia. das Letras" />
+        <br />
+        <br />
+        <label for="addAnoPublicacao"; style="color:Cornsilk;"><strong>Ano de Publicação:<strong></label>
+        <input type="number" name="addAnoPublicacao" id="addAnoPublicacao" size="10" min="1" max="9999" required placeholder="p. ex. 2008" />
+        <br />
+        <br />
+        <label for="addNumeroEdicao"; style="color:Cornsilk;"><strong>Edição:<strong></label>
+        <input type="number" name="addNumeroEdicao" id="addNumeroEdicao" size="10" min="1" max="9999" required placeholder="p. ex. 5ª" />
+	<br />
+        <br />
+	<div style="color:Cornsilk;">
+        Observações:
+        <input type="text" name="contractObsr" id="contractObs" size="100" min="1" max="99999" required placeholder="Opcional" />
+      	</div>
+	<br />
+        <br />
+        <input type="submit" value="Registrar no Blockchain" onclick="obterDadosForm();" />
+      </form>
+    <hr />
+     <h1><label style="color:Cornsilk;">Dados do Livro</h1>
+      </div>
+      <div>
+        <h2><label style="color:Cornsilk;">Responsável técnico: 0x84D4F5AFD8dA01efD7aA2Db3c6f6062479652207 <span id="spanOwner"></span></h2>
+      </div>
+      <div>
+      <label style="color:Cornsilk;">Informe o ID do livro desejado:
+      <input type="number" name="contractNumber" id="contractNumber" size="10" min="1" max="99999" />
+      <button onclick="getRentalContractData()">Buscar Dados</button>
+      </div>
+      <br />
+      <div><label style="color:Cornsilk;">Título: <span id="locator"></span></div>
+      <br />
+      <div><label style="color:Cornsilk;">Autor(a): <span id="renter"></span></div>
+      <br />
+      <div><label style="color:Cornsilk;">Editora: <span id="addressHome"></span></div>
+      <br />
+      <div><label style="color:Cornsilk;">Ano de Publicação: <span id="rentalValue"></span></div>
+      <br />
+      <div><label style="color:Cornsilk;">Edição: <span id="rentalValue"></span></div>
+    </section>
+	   <script
+      type="text/javascript"
+      integrity="sha384-dq8L5gpIcUoGAeHh/6setfxuuDI0ngshPvCvksSAcQMMWCr5cVFAaijT//nxVyjb"
+      crossorigin="anonymous"
+      src="https://cdn-cors.ethers.io/lib/ethers-5.4.0.umd.min.js"
+    ></script>
+    <script src="dado-contrato-no-ethereum.js"></script>
+    <script src="funcoes-contrato-ethereum.js"></script>
+    <script>
+      console.log("Tentando se conectar ao Ethereum via Metamask...");
+      try {
+        const connectionProvider = new ethers.providers.Web3Provider(window.ethereum.enable());
+        const signer = connectionProvider.getSigner();
+        //sc = smart contract
+        smartContract = new ethers.Contract(contractAddress, ABI, connectionProvider);
+        smartContractWithSigner = smartContract.connect(signer);
+        console.log("Conectado ao Smart Contract no Ethereum via Metamask.");
+      } catch (err) {
+        console.log("Erro ao conectar ao Ethereum/Smart Contract...");
+        console.error(err);
+      }
+    </script>
+  </body>
+</html>
