@@ -36,12 +36,12 @@
         <br />
         <br />
         <label for="addNumeroEdicao"; style="color:Cornsilk;"><strong>Edição:<strong></label>
-        <input type="number" name="addNumeroEdicao" id="addNumeroEdicao" size="10" min="1" max="9999" required placeholder="p. ex. 5ª" />
+        <input type="number" name="addNumeroEdicao" id="addNumeroEdicao" size="100" min="1" max="9999" required placeholder="p. ex. 5ª" />
 	<br />
         <br />
 	<div style="color:Cornsilk;">
         Observações:
-        <input type="text" name="contractObsr" id="contractObs" size="100" min="1" max="99999" required placeholder="Opcional" />
+        <input type="text" size="100" min="1" max="99999" required placeholder="Opcional" />
       	</div>
 	<br />
         <br />
@@ -59,15 +59,15 @@
       <button onclick="getRentalContractData()">Buscar Dados</button>
       </div>
       <br />
-      <div><label style="color:Cornsilk;">Título: <span id="locator"></span></div>
+      <div><label style="color:Cornsilk;">Título: <span id="titulo"></span></div>
       <br />
-      <div><label style="color:Cornsilk;">Autor(a): <span id="renter"></span></div>
+      <div><label style="color:Cornsilk;">Autor(a): <span id="autor"></span></div>
       <br />
-      <div><label style="color:Cornsilk;">Editora: <span id="addressHome"></span></div>
+      <div><label style="color:Cornsilk;">Editora: <span id="editora"></span></div>
       <br />
-      <div><label style="color:Cornsilk;">Ano de Publicação: <span id="rentalValue"></span></div>
+      <div><label style="color:Cornsilk;">Ano de Publicação: <span id="anoPublicacao"></span></div>
       <br />
-      <div><label style="color:Cornsilk;">Edição: <span id="rentalValue"></span></div>
+      <div><label style="color:Cornsilk;">Edição: <span id="numeroEdicao"></span></div>
     </section>
 	   <script
       type="text/javascript"
